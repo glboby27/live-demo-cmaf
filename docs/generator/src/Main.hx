@@ -30,7 +30,7 @@ class Main {
 		// }catch(e:Dynamic){
 		// 	trace(e);
 		// }
-		
+
 		// template arguments (base path etc)
 
 		var featurepage_json = haxe.Resource.getString("featurepage_json");
@@ -44,8 +44,8 @@ class Main {
 		// template '$$func()' macro functions
 		var unique = 0;
 		var css = [];
-		global_macros = 
-		{ 
+		global_macros =
+		{
 			template_base: Reflect.makeVarArgs(function(args){
 				args.shift();
 				var template = new Template(read_str_file("templates/base.html"));
@@ -64,16 +64,16 @@ class Main {
 						buf.push(a);
 						fixedArgs.push(buf.join(","));
 						buf = new Array<String>();
-					}else 
+					}else
 						buf.push(a);
 				}
 				fixedArgs.push(buf.join(","));
 				var c = tmpl_from_component(component, fixedArgs[0].length > 0 ? Json.parse(fixedArgs[0]) : null, fixedArgs[1]);
-				
+
 				if(c.css != null){
 					css.push(c.css);
 				}
-				
+
 				return escape(c.html);
 			}),
 			escape: Reflect.makeVarArgs(function(args){
@@ -106,14 +106,14 @@ class Main {
 		copyDir("./static", "../output");
 	}
 	static function processDir(path:String, cb:String->Void) : Void
-	{	
+	{
 		if (sys.FileSystem.exists(path) && sys.FileSystem.isDirectory(path))
 		{
 			var entries = sys.FileSystem.readDirectory(path);
-			for (entry in entries) 
+			for (entry in entries)
 				if (sys.FileSystem.isDirectory(path + '/' + entry)) {
 					processDir(path + '/' + entry, cb);
-				} else 
+				} else
 					cb('${path}/${entry}');
 		}
 	}
@@ -121,11 +121,11 @@ class Main {
 	{
 		if(!sys.FileSystem.exists(target))
 			FileSystem.createDirectory(target);
-		
+
 		if (sys.FileSystem.exists(path) && sys.FileSystem.isDirectory(path))
 		{
 			var entries = sys.FileSystem.readDirectory(path);
-			for (entry in entries) 
+			for (entry in entries)
 				if (sys.FileSystem.isDirectory(path + '/' + entry)) {
 					FileSystem.createDirectory('${target}/${path}/${entry}');
 					copyDir(path + '/' + entry, target);
@@ -165,7 +165,7 @@ class Main {
 		var output = p.stdout.readAll().toString();
 		p.stdout.close();
 		output.split("\r").join("").split("\n").join("");
-		output = StringTools.trim(output);	
+		output = StringTools.trim(output);
 		return macro $v{output};
 	}
 }
