@@ -1,0 +1,36 @@
+$$template_base(
+    {
+        "navbar_header": $$component(navbar-header),
+        "testurls": {
+            "streams": [
+                "https://live.unified-streaming.com/scte35/scte35.isml/.mpd"
+            ]
+        },
+        "title": "CMAF - Live Media Ingest",
+        "jumbo_title": "CMAF - Live Media Ingest",
+        "jumbo_body": [ {"lead": "Using <img style=\"width: 30px; filter: drop-shadow(0px 0px 1.5px #222222D0); margin-top: -8px;\" src=\"logo.png\"></img> FFMPEG"},
+            {"text":"This demo showcases blaaaaah info"}
+        ],
+        "jumbo_logo": $$read_str_file(svg/origin.svg),
+        "prejumbo": $$component(warning),
+        "pages_body": [
+            $$component(benefits, { "benefits" : [
+                "A standard developed through the DASH-Industry Forum",
+                "An industry best practice for ingesting live media to processing entities",
+                "An evolution of the Azure Media Services Live Ingest specification",
+                "A way of ingesting CMAF media (ISO/IEC23000-19:2018)",
+                "A way of utilising one file format for streaming to multiple devices"
+            ]}),
+            $$component(svg-object, { "url": "cmaf_flow.svg" }),
+            $$component(single,
+            {
+                "output_title": "<a> This stream is based on the following <a href=https://github.com/unifiedstreaming/live-demo-cmaf>Github Demo</a><div>",
+                "output": ""
+            }, #xmlview {
+                height: 388px;
+            })],
+        "finally": $$component(cmaf, {
+          "source" : "http://live.unified-streaming.com/scte35/scte35.isml/.m3u8"
+        })
+    }
+  )

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!-- ::build_version:: -->
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1241578-15"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1241578-15');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#222">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    ::if title::
+    <meta name="description" content="::title::">
+    ::end::
+    
+    ::if testurls.streams::
+    ::foreach testurls.streams::
+    <meta name="test_stream" content="::__current__::">
+    ::end::
+    ::end::
+
+    ::if testurls.nonstreams::
+    ::foreach testurls.nonstreams::
+    <meta name="test_nonstream" content="::__current__::">
+    ::end::
+    ::end::
+
+    ::if testurls.ignore::
+    <meta name="test_ignore" content="True">
+    ::end::
+
+    <meta name="author" content="Unified Streaming">
+    <meta name="Keywords"
+        content="Unified Streaming, HTTP, HLS, DASH, HDS, Smooth Streaming, H.264, AVC, Apache, Nginx, DASH-IF, CPIX" />
+    <link rel="icon" href="favicon.ico">
+    ::if title::
+    <title>::title::</title>
+    ::end::
+    ::if head::
+    ::foreach head::
+    ::__current__::
+    ::end::
+    ::end::
+    <script>
+        //enable mobile menu
+        addEventListener("load", function () {
+            document.body.querySelector('[data-toggle="collapse"]').
+            addEventListener("click", function () {
+                var nav = document.getElementById("navbar");
+                nav.classList.toggle("usp_menu_open");
+                nav.classList.remove("collapse");
+                if (nav.classList.contains("usp_menu_open")) {
+                    nav.style.height = (nav.firstElementChild.offsetHeight + 20) + "px";
+                } else {
+                    nav.style.removeProperty("height");
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="::basepath::/static/bootstrap-4.3.1.min.css">
+    <script src="::basepath::/static/uapi.js" type="text/javascript"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Visuelt Regular Webfont';
+            src: url('::basepath::/static/fonts/visuelt_regular-web.eot');
+            src: url('::basepath::/static/fonts/visuelt_regular-web.eot?#iefix') format('embedded-opentype'),
+                url('::basepath::/static/fonts/visuelt_regular-web.woff') format('woff'),
+                url('::basepath::/static/fonts/visuelt_regular-web.woff2') format('woff2'),
+                url('::basepath::/static/fonts/visuelt_regular-web.ttf') format('truetype'),
+                url('::basepath::/static/fonts/visuelt_regular-web.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .lead, h2, .display-4 {
+            font-family: 'Visuelt Regular Webfont';
+            margin-bottom: 0;
+        }
+
+
+        @media screen and (max-width: 991px) {
+            .navbar-collapse {
+                height: 0px;
+            }
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+        }
+
+        .h4,
+        h4 {
+            font-size: 18px;
+        }
+
+        ul {
+            margin: 0;
+            padding: inherit;
+        }
+
+        #canvas_duration {
+            float: left;
+        }
+
+        .well {
+            font-family: monospace;
+            margin-bottom: 0px;
+        }
+
+        .jumbotron {
+            margin-bottom: 0;
+            background: none;
+        }
+
+        pre {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .panel-info>.panel-heading {
+            color: #cc0000;
+            background-color: #fde4e4;
+            border-color: #ca9b9b;
+        }
+
+        .panel-info {
+            border-color: #ca9b9b;
+        }
+
+        /* menu */
+        .active {
+            color: #fefefe !important;
+            font-weight: 500;
+        }
+
+        .bg-dark-usp {
+            background-color: #222 !important;
+            padding: 0px;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            color: #fff;
+        }
+
+        ::pages_css::
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-usp">
+        <div class="container">
+            ::navbar_header::
+            <button class="navbar-toggler mr-1" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbar" class="navbar-collapse collapse">
+                <script src="::basepath::/static/menu.js"></script>
+            </div>
+            <!--/.navbar-collapse -->
+
+        </div>
+    </nav>
+    ::if main_container::
+    ::foreach main_container::
+    ::__current__::
+    ::end::
+    ::else::
+    ::if prejumbo::
+    ::prejumbo::
+    ::end::
+    ::if jumbo_title::
+    <div class="jumbotron pt-4 pb-1">
+        <div class="container">
+            ::if jumbo_logo::
+            <div style="float:right; margin: 10px; width: 100px;">
+                ::jumbo_logo::
+            </div>
+            ::end::
+            <h1 class="display-4">::jumbo_title::</h1>
+            ::if jumbo_body::
+            ::foreach jumbo_body::
+            ::if lead::
+            <p class="lead">::lead::</p>
+            ::end::
+            ::if text::
+            <p class="lead text-muted">::text::</p>
+            ::end::
+            ::end::
+            ::end::
+        </div>
+    </div>
+    ::end::
+    </div>
+    <div class="container">
+
+        <div class="row">
+            ::if pages_body::
+            ::foreach pages_body::
+            ::__current__::
+            ::end::
+            ::end::
+        </div>
+
+    </div>
+    ::end::
+    ::if pages_custom_footer::
+    ::pages_custom_footer::
+    ::else::
+    <div class="container">
+        <footer class="mt-3 footer">
+            <div class="text-center">
+                <p>More information about Unified Streaming is available at our
+                    <a href="http://www.unified-streaming.com">Unified Streaming</a>
+                    website or you can write us a
+                    <a href="mailto:info@unified-streaming.com?subject=UnifiedStreaming">private mail</a>.
+                </p>
+                <p>&copy; Unified Streaming 2007 - 2020</p>
+            </div>
+        </footer>
+    </div>
+    ::end::
+    ::if finally::
+    ::finally::
+    ::end::
+</body>
+
+</html>

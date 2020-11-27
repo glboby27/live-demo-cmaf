@@ -1,0 +1,33 @@
+.navbar-collapse {
+    overflow: hidden;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: .35s;
+    -o-transition-duration: .35s;
+    transition-duration: .35s;
+    -webkit-transition-property: height,visibility;
+    -o-transition-property: height,visibility;
+    transition-property: height,visibility;
+}
+.navbar-brand svg {
+    height: 40px;
+    margin-left:5px;
+}
+svg .line line {
+    animation: dash .24s ease-in-out forwards;
+    stroke-dashoffset: -4;
+}
+svg .line line:nth-child(1) { animation-delay: .01s }
+svg .line line:nth-child(2) { animation-delay: .02s }
+svg .line line:nth-child(3) { animation-delay: .06s }
+svg .line line:nth-child(4) { animation-delay: .08s }
+svg .line line:nth-child(5) { animation-delay: .1s }
+@keyframes dash {
+    from {
+        stroke-dashoffset: -100;
+    }
+    to {
+        stroke-dashoffset: -4;
+    }
+}

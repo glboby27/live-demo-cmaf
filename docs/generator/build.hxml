@@ -1,0 +1,8 @@
+-cp src
+-D analyzer-optimize
+-D haxeJSON
+-main Main
+--interp
+#-resource templates/featurepage.json@featurepage_json
+#--dce full
+#--python main.py

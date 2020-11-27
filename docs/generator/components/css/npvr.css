@@ -1,0 +1,19 @@
+.timeline #timeline {
+    background: whitesmoke;
+    box-shadow: inset 0 0px 1em 0.1em #00000026;
+}
+.timeline .point {
+    background: repeating-linear-gradient(45deg, #00000026, #00000026, 5px, #ffcb0026 5px, #ffcb0026 10px);
+}
+.timeline #timeline::after {
+    content: "nPVR Archive: click to create or drag to move a clip";
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-family: sans-serif;
+    margin-top: 1em;
+    font-weight: 300;
+}
+.disabled {
+    pointer-events: none;
+}

@@ -1,0 +1,24 @@
+<div id="browser_warning" class="alert alert-warning" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    This browser is not supported, please retry using Google Chrome, Firefox or Microsoft Edge
+</div>
+<script>
+navigator.requestMediaKeySystemAccess(
+ 'com.microsoft.playready', [{
+    videoCapabilities: [
+        {
+            contentType: 'video/mp4; codecs="avc1.42E01E"'
+        }
+]}]).then(function(e){
+    browser_warning.style.display = "none";
+});
+navigator.requestMediaKeySystemAccess(
+ 'com.widevine.alpha', [{
+    videoCapabilities: [
+        {
+            contentType: 'video/mp4; codecs="avc1.42E01E"'
+        }
+]}]).then(function(e){
+    browser_warning.style.display = "none";
+});
+</script>

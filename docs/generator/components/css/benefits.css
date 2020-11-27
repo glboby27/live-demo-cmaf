@@ -1,0 +1,32 @@
+.bs-callout {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+    font-size: larger;
+}
+.bs-callout.noborder{
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.bs-callout-origin {
+    border-left-color: #e40049;
+}
+.why li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-indent: -22px;
+}
+.why li:before { 
+    content: "✓"; 
+    color:#60e460; 
+    font-size: 1.3em;
+    margin-right:5px; 
+}

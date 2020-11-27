@@ -1,0 +1,14 @@
+<script>
+    var player = null;
+    function load(){
+        if(player)
+            player.destroy();
+        video_source.href = "::source::" ;
+        uapi.writePlayer(video_source, video_source.href, "hlsjs").then(obj => {
+            player = obj;
+            autoplay = true;
+            muted = true;
+        });
+    }
+    load();
+</script>

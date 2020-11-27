@@ -1,0 +1,9 @@
+<div id="browser_warning" class="alert alert-warning" style="display:none;" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    This demo works best using Google Chrome
+</div>
+<script defer>
+if(!(/Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor))){
+    browser_warning.style.display = "block";
+}
+</script>

@@ -1,0 +1,147 @@
+a {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.btn-outline-primary {
+    color: #337ab7;
+    background-color: transparent;
+    background-image: none;
+    border-color: #337ab7;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(51, 122, 183, 0.5);
+}
+
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+    color: #337ab7;
+    background-color: transparent;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.container {
+    padding-right: unset;
+    padding-left: unset;
+}
+.toast {
+    opacity: unset;
+    display: none;
+}
+
+.jumbotron {
+    padding-bottom: 0px;
+    background: #3c769a url(tos.jpg) 0 0 no-repeat;
+    background-size: cover;
+    min-height: 236px;
+    height: 10vw;
+    max-height: 600px;
+    background-position: top right;
+    border-radius: 0;
+    box-shadow: 0px 1px 5px;
+}
+
+.usp-overlay {
+    position: absolute;
+    z-index: 1001;
+    min-width: 80%;
+    top: 2em;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+.usp-overlay div {
+    transition: padding ease-out 250ms;
+}
+
+.usp-overlay .infobox {
+    width: 100%;
+    padding: 15px;
+}
+
+#popup-backdrop {
+    top: 0px;
+    width: 110%;
+    height: 110%;
+    position: fixed;
+    background: #222;
+    transform: translate(-5%, -5%);
+    opacity: .66;
+    z-index: 1000;
+}
+
+.card {
+    border-radius: .15rem;
+    width: 100%;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card li>a {
+    float: right;
+    margin-left: 5px;
+}
+
+.card ul {
+    list-style-type: none;
+    margin: 15px;
+    padding: 0;
+}
+
+body.blur> :not(.usp-overlay) {
+    filter: blur(3.3px);
+    transition: filter 60ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.features-logo {
+    position: relative;
+    user-select: none;
+}
+
+.features-logo div {
+    bottom: 0px;
+    position: absolute;
+    right: 3em;
+    mix-blend-mode: screen;
+}
+
+.row {
+    margin-left: 0;
+}
+
+.row>div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+    padding: 0;
+}
